@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private typealias identifire = AccsibilityIdentifire.viewController
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!

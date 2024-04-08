@@ -14,6 +14,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         homeTableView.delegate = self
         homeTableView.dataSource = self
+        homeTableView.accessibilityIdentifier = homeidentifire.tableView.rawValue
+        title = "Home"
     }
 }
 

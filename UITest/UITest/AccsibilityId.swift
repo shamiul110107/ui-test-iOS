@@ -6,6 +6,8 @@
 //
 
 import Foundation
+typealias identifire = AccsibilityIdentifire.viewController
+typealias homeidentifire = AccsibilityIdentifire.HomeController
 
 struct AccsibilityIdentifire {
     enum viewController: String {
@@ -16,4 +18,9 @@ struct AccsibilityIdentifire {
         case emailWarningLabel = "viewController.emailWarningLabel"
         case passwordWarningLabel = "viewController.passwordWarningLabel"
     }
+    
+    enum HomeController: String {
+        case tableView = "HomeController.tableView"
+    }
+
 }
