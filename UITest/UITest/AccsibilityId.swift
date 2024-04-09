@@ -13,6 +13,7 @@ struct AccsibilityIdentifire {
     enum viewController: String {
         case loginTitle = "viewController.loginTitle"
         case submitBtn = "viewController.submitBtn"
+        case guestBtn = "viewController.guestBtn"
         case emailTxtField = "viewController.emailTxtField"
         case passwordTxtField = "viewController.passwordTxtField"
         case emailWarningLabel = "viewController.emailWarningLabel"

@@ -8,8 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var continueGuestButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var loginTitle: UILabel!
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
     
     fileprivate func setupAccsibilityIdentifire() {
         submitButton.accessibilityIdentifier = identifire.submitBtn.rawValue
+        continueGuestButton.accessibilityIdentifier = identifire.guestBtn.rawValue
         loginTitle.accessibilityIdentifier = identifire.loginTitle.rawValue
         emailTextField.accessibilityIdentifier = identifire.emailTxtField.rawValue
         passwordTextField.accessibilityIdentifier = identifire.passwordTxtField.rawValue
@@ -34,14 +36,6 @@ class ViewController: UIViewController {
         passwordWarningLabel.accessibilityIdentifier = identifire.passwordWarningLabel.rawValue
     }
     
-    @IBAction func submitButtonAction(_ sender: Any) {
-        print(emailTextField.text!.isValidEmail, passwordTextField.text!.isValidPassword)
-        if emailTextField.text!.isValidEmail && passwordTextField.text!.isValidPassword {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as UIViewController
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-    }
     
     private func checkEmail(text: String) {
         if text.isValidEmail || text.isEmpty {
@@ -58,10 +52,27 @@ class ViewController: UIViewController {
             passwordWarningLabel.text = "Password is Invalid"
         }
     }
+    
+    private func navigateToHome() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as UIViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func submitButtonAction(_ sender: Any) {
+        print(emailTextField.text!.isValidEmail, passwordTextField.text!.isValidPassword)
+        if emailTextField.text!.isValidEmail && passwordTextField.text!.isValidPassword {
+            navigateToHome()
+        }
+    }
+    
+    @IBAction func continueGuestButtonAction(_ sender: Any) {
+        navigateToHome()
+    }
 }
 
 extension ViewController: UITextFieldDelegate {
-
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return false }
         let newString = (text as NSString).replacingCharacters(in: range, with: string)

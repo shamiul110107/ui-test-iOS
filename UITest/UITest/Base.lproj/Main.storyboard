@@ -57,6 +57,20 @@
                                     <action selector="submitButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bSH-Mg-bPs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyS-hU-B9L">
+                                <rect key="frame" x="16" y="388.33333333333331" width="361" height="41"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="toK-sC-ORw"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Continue with Guest">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="continueGuestButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RQJ-bk-CbN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -66,7 +80,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HdC-28-lEd" secondAttribute="trailing" constant="16" id="2fK-Uw-5mf"/>
                             <constraint firstItem="dxg-q7-3oU" firstAttribute="top" secondItem="LHu-Ll-foA" secondAttribute="bottom" constant="16" id="7gr-rw-AVG"/>
                             <constraint firstItem="LHu-Ll-foA" firstAttribute="top" secondItem="4PB-ID-Meb" secondAttribute="bottom" constant="8" id="Bnk-j9-JbU"/>
+                            <constraint firstItem="XyS-hU-B9L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="CtU-gx-nms"/>
                             <constraint firstItem="4PB-ID-Meb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Dnv-3G-VbI"/>
+                            <constraint firstItem="XyS-hU-B9L" firstAttribute="top" secondItem="dxg-q7-3oU" secondAttribute="bottom" constant="24" id="Gny-hx-Kyn"/>
                             <constraint firstItem="bxI-1b-bEi" firstAttribute="top" secondItem="vAw-hf-UXW" secondAttribute="bottom" constant="8" id="KQK-zv-zaf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bxI-1b-bEi" secondAttribute="trailing" constant="16" id="Kfz-1K-9T8"/>
                             <constraint firstItem="vAw-hf-UXW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="NbJ-da-54X"/>
@@ -76,6 +92,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4PB-ID-Meb" secondAttribute="trailing" constant="16" id="Q0s-qc-eHt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LHu-Ll-foA" secondAttribute="trailing" constant="16" id="VZ4-zZ-MCZ"/>
                             <constraint firstItem="vAw-hf-UXW" firstAttribute="top" secondItem="HdC-28-lEd" secondAttribute="bottom" constant="16" id="YQa-VL-gpv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XyS-hU-B9L" secondAttribute="trailing" constant="16" id="c4F-r3-ez4"/>
                             <constraint firstItem="bxI-1b-bEi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jra-aZ-ns0"/>
                             <constraint firstItem="HdC-28-lEd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sic-AA-p7i"/>
                             <constraint firstItem="LHu-Ll-foA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xwg-Px-9aP"/>
@@ -83,6 +100,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="o4Z-tA-zJV"/>
                     <connections>
+                        <outlet property="continueGuestButton" destination="XyS-hU-B9L" id="eJt-kk-e4W"/>
                         <outlet property="emailTextField" destination="vAw-hf-UXW" id="KHV-uj-8c0"/>
                         <outlet property="emailWarningLabel" destination="bxI-1b-bEi" id="xLP-EN-Lei"/>
                         <outlet property="loginTitle" destination="HdC-28-lEd" id="rsT-p9-pZs"/>
@@ -158,6 +176,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
