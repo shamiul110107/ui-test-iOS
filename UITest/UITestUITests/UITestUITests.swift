@@ -69,7 +69,6 @@ final class UITestUITests: XCTestCase {
         
         let table = app.tables[homeidentifire.tableView.rawValue]
         XCTAssertTrue(table.exists)
-        
     }
     
     func testHomeView() {
@@ -91,5 +90,30 @@ final class UITestUITests: XCTestCase {
             app.swipeUp()
             app.swipeDown()
         }
+    }
+    
+    func testNavigationBackBtn() {
+        
+        let guestBtn = app.buttons[identifire.guestBtn.rawValue]
+        XCTAssertTrue(guestBtn.exists)
+        guestBtn.tap()
+        
+        let backButton = app.navigationBars.buttons.element(boundBy: 0)
+        XCTAssertTrue(backButton.exists, "Back button should exist in the navigation bar")
+        backButton.tap()
+        let loginTitle = app.staticTexts[identifire.loginTitle.rawValue]
+        XCTAssertTrue(loginTitle.exists)
+    }
+    
+    func testTableCellTapAndAlert() {
+        let guestBtn = app.buttons[identifire.guestBtn.rawValue]
+        XCTAssertTrue(guestBtn.exists)
+        guestBtn.tap()
+        
+        let table = app.tables[homeidentifire.tableView.rawValue]
+        table.cells.staticTexts["indexpath 2"].tap()
+        let alert = app.alerts["Alert!"]
+        XCTAssertTrue(alert.exists)
+        app.alerts["Alert!"].scrollViews.otherElements.buttons["Ok"].tap()
     }
 }

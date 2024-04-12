@@ -17,6 +17,12 @@ class HomeViewController: UIViewController {
         homeTableView.accessibilityIdentifier = homeidentifire.tableView.rawValue
         title = "Home"
     }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Alert!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
+    }
 }
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
@@ -28,5 +34,10 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = "indexpath \(indexPath.row)"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let message = "Clicked on index \(indexPath.row)"
+        showAlert(message: message)
     }
 }
